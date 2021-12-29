@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.88b04fd8c14d8a8c71bdb991f3fd35f0f987a377f0eeea9179c5b019d127c123.js" integrity="sha256-iLBP2MFNioxxvbmR8/018PmHo3fw7uqRecWwGdEnwSM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7ba9611ae01d99d9c47b213a35da810b1d6e170539ee7bc18bd9e7b4925df81c.js" integrity="sha256-e6lhGuAdmdnEeyE6NdqBCx1uFwU57nvBi9nntJJd&#43;Bw=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://doc.gleemanx.com/docs/apiDoc/index.xml" title="Gleemanx's doc" />
@@ -314,7 +314,7 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
 </h3>
 <ul>
 <li><strong>接口说明：</strong> 检测状态异常率</li>
-<li><strong>接口地址：</strong> /device/package/abnormal</li>
+<li><strong>接口地址：</strong> /cloud/v1/device/package/abnormal</li>
 </ul>
 <h4 id="221-请求参数">
   2.2.1 请求参数
@@ -334,13 +334,13 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
 <td style="text-align:left">created</td>
 <td style="text-align:left">string</td>
 <td style="text-align:left">O</td>
-<td style="text-align:left">请求时间</td>
+<td style="text-align:left">请求时间 (格式:YYYYMMDD)</td>
 </tr>
 </tbody>
 </table>
 <p>请求示例：</p>
 <pre><code>{
-   &quot;created&quot;:&quot;2018-09-10 00:00:00&quot;
+   &quot;created&quot;:&quot;20181112&quot;
 }
 </code></pre><h4 id="222-返回结果">
   2.2.2 返回结果
@@ -376,21 +376,21 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
 </tr>
 <tr>
 <td style="text-align:left">  abnormalTotal</td>
-<td style="text-align:left">int</td>
+<td style="text-align:left">[]string</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">异常设备数</td>
+<td style="text-align:left">异常设备号数组</td>
 </tr>
 <tr>
 <td style="text-align:left">  validTotal</td>
-<td style="text-align:left">int</td>
+<td style="text-align:left">[]string</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">有效设备数</td>
+<td style="text-align:left">有效设备号数组</td>
 </tr>
 <tr>
 <td style="text-align:left"> total</td>
 <td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">条目数</td>
+<td style="text-align:left">此字段在此接口不生效</td>
 </tr>
 </tbody>
 </table>
@@ -399,8 +399,38 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
     &quot;code&quot;: 200,
     &quot;data&quot;: {
         &quot;items&quot;: {
-            &quot;abnormalTotal&quot;: 0,
-            &quot;validTotal&quot;: 25
+            &quot;abnormalTotal&quot;: [
+                &quot;32050200041320000658&quot;,
+                &quot;32050000001326000020&quot;,
+                &quot;32050000001326000021&quot;
+                ]
+            &quot;validTotal&quot;: [
+                &quot;32050200041320000658&quot;,
+                &quot;32050000001326000020&quot;,
+                &quot;32050000001326000021&quot;,
+                &quot;32050000001326000022&quot;,
+                &quot;32050000001326000023&quot;,
+                &quot;32050000001326000072&quot;,
+                &quot;32050000001326000073&quot;,
+                &quot;32050000001326000038&quot;,
+                &quot;32050000001326000039&quot;,
+                &quot;32050800001326000025&quot;,
+                &quot;32058254001310206377&quot;,
+                &quot;32058254001310206429&quot;,
+                &quot;32058254001310206481&quot;,
+                &quot;32058254001310206583&quot;,
+                &quot;32058254001310206632&quot;,
+                &quot;32058252001310209063&quot;,
+                &quot;32058252001310209112&quot;,
+                &quot;32058252001310209164&quot;,
+                &quot;32058252001310209213&quot;,
+                &quot;32058252001310209265&quot;,
+                &quot;32058252001310209318&quot;,
+                &quot;32058252001310208155&quot;,
+                &quot;32058252001310208207&quot;,
+                &quot;32059352001320100092&quot;,
+                &quot;32059352001320100093&quot;
+            ]
         },
         &quot;total&quot;: 1
     }
@@ -440,7 +470,7 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/be8bafa7aecd6a92af25a18cb7f293016fa9987e" title='Last modified by gleemanx | December 29, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/71d685ca12b1727d344cf7881caf454494f262a3" title='Last modified by gleemanx | December 29, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>December 29, 2021</span>
     </a>
