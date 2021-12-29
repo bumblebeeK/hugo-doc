@@ -102,7 +102,6 @@ data						|object		|R			|&nbsp;
 &emsp;items						|object		|R			|&nbsp;
 &emsp;&emsp;abnormalTotal				|[]string		|R			|异常设备号数组
 &emsp;&emsp;validTotal				|[]string		|R			|有效设备号数组
-&emsp;total				|int		|R			|此字段在此接口不生效
 
 
 
@@ -146,7 +145,6 @@ data						|object		|R			|&nbsp;
                 "32059352001320100093"
             ]
         },
-        "total": 1
     }
 }
 ```
