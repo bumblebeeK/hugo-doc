@@ -88,7 +88,7 @@ created						|string		|O		|请求时间
 
 ```
 {
-    "created":111
+   "created":"2018-09-10 00:00:00"
 }
 ```
 
