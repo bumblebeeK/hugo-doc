@@ -31,15 +31,15 @@ markup:
 #     contentDir: content.zh
 #     weight: 3
 
-menu:
-  # before: []
-  after:
-    - name: "Github"
-      url: "https://github.com/gleemanx/hugo-doc"
-      weight: 10
-    - name: "博客"
-      url: "https://gleemanx.com/"
-      weight: 20
+# menu:
+#   # before: []
+#   after:
+#     - name: "Github"
+#       url: "https://github.com/gleemanx/hugo-doc"
+#       weight: 10
+#     - name: "博客"
+#       url: "https://gleemanx.com/"
+#       weight: 20
 
 params:
   # (Optional, default light) Sets color theme: light, dark or auto.
