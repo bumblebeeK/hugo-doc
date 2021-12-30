@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="预警指标接口文档 v1 #  1 规范说明 #  1.1 通信协议 #  HTTP协议
-1.2 请求方法 #  所有接口只支持POST方法发起请求。
+<meta name="description" content="预警指标接口文档 v1.1 #  1 规范说明 #  1.1 通信协议 #  HTTP协议
+1.2 请求方法 #  具体接口具体要求
 1.3 字符编码 #  HTTP通讯采用UTF-8字符集编码格式。
 1.4 格式说明 #  元素出现要求说明：
    符号 说明     R 报文中该元素必须出现（Required）   O 报文中该元素可选出现（Optional）   C 报文中该元素在一定条件下出现（Conditional）    1.5 报文规范说明 #    报文规范仅针对交易请求数据进行描述；
@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f49acbec1b06d4e848d7deb74128e41cad881d58069c228c9c858ea0234badab.js" integrity="sha256-9JrL7BsG1OhI1963QSjkHK2IHVgGnCKMnIWOoCNLras=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2eff885c00e6d7f5d35a876c20b1025c54ffce988b13056c792a97304acaf230.js" integrity="sha256-Lv&#43;IXADm1/XTWodsILECXFT/zpiLEwVseSqXMErK8jA=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://doc.gleemanx.com/docs/apiDoc/index.xml" title="Gleemanx's doc" />
@@ -156,9 +156,9 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="预警指标接口文档-v1">
-  预警指标接口文档 v1
-  <a class="anchor" href="#%e9%a2%84%e8%ad%a6%e6%8c%87%e6%a0%87%e6%8e%a5%e5%8f%a3%e6%96%87%e6%a1%a3-v1">#</a>
+  <article class="markdown"><h1 id="预警指标接口文档-v11">
+  预警指标接口文档 v1.1
+  <a class="anchor" href="#%e9%a2%84%e8%ad%a6%e6%8c%87%e6%a0%87%e6%8e%a5%e5%8f%a3%e6%96%87%e6%a1%a3-v11">#</a>
 </h1>
 <h2 id="1-规范说明">
   1 规范说明
@@ -173,7 +173,7 @@ https://github.com/alex-shpak/hugo-book
   1.2 请求方法
   <a class="anchor" href="#12-%e8%af%b7%e6%b1%82%e6%96%b9%e6%b3%95">#</a>
 </h3>
-<p>所有接口只支持POST方法发起请求。</p>
+<p>具体接口具体要求</p>
 <h3 id="13-字符编码">
   1.3 字符编码
   <a class="anchor" href="#13-%e5%ad%97%e7%ac%a6%e7%bc%96%e7%a0%81">#</a>
@@ -271,21 +271,9 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
 <th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">code</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left">响应码，代码定义请见“附录A 响应吗说明”</td>
-</tr>
-<tr>
-<td style="text-align:left">data</td>
-<td style="text-align:left">object</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left">每个接口特有的参数，详见每个接口定义</td>
-</tr>
-</tbody>
 </table>
+<!-- code						|int		|R			|响应码，代码定义请见“附录A 响应吗说明” -->
+<p>result						|object		|R			|每个接口特有的参数，详见每个接口定义</p>
 <h2 id="2-接口定义">
   2. 接口定义
   <a class="anchor" href="#2-%e6%8e%a5%e5%8f%a3%e5%ae%9a%e4%b9%89">#</a>
@@ -296,35 +284,18 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
 </h3>
 <ul>
 <li><strong>接口说明：</strong> 检测状态异常率</li>
-<li><strong>接口地址：</strong> /cloud/v1/device/package/abnormal</li>
+<li><strong>接口地址：</strong> /external/device_abnormal</li>
+<li><strong>接口方法：</strong> GET</li>
 </ul>
 <h4 id="211-请求参数">
   2.1.1 请求参数
   <a class="anchor" href="#211-%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
 </h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数名称</th>
-<th style="text-align:left">类型</th>
-<th style="text-align:left">出现要求</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">created</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">O</td>
-<td style="text-align:left">请求时间 (格式:YYYYMMDD)</td>
-</tr>
-</tbody>
-</table>
-<p>请求示例：</p>
-<pre><code>{
-   &quot;created&quot;:&quot;20181112&quot;
-}
-</code></pre><h4 id="212-返回结果">
+<p>参数名称						|类型		|出现要求	|描述<br>
+GET接口，无参数</p>
+<p>请求示例：
+该接口为GET接口，且无参数，直接访问即可。</p>
+<h4 id="212-返回结果">
   2.1.2 返回结果
   <a class="anchor" href="#212-%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c">#</a>
 </h4>
@@ -339,31 +310,19 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">code</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left">响应码，代码定义请见“附录A 响应吗说明”</td>
-</tr>
-<tr>
-<td style="text-align:left">data</td>
+<td style="text-align:left">results</td>
 <td style="text-align:left">object</td>
 <td style="text-align:left">R</td>
 <td style="text-align:left"> </td>
 </tr>
 <tr>
-<td style="text-align:left"> items</td>
-<td style="text-align:left">object</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left">  abnormalTotal</td>
+<td style="text-align:left"> abnormalTotal</td>
 <td style="text-align:left">[]string</td>
 <td style="text-align:left">R</td>
 <td style="text-align:left">异常设备号数组</td>
 </tr>
 <tr>
-<td style="text-align:left">  validTotal</td>
+<td style="text-align:left"> validTotal</td>
 <td style="text-align:left">[]string</td>
 <td style="text-align:left">R</td>
 <td style="text-align:left">有效设备号数组</td>
@@ -372,42 +331,40 @@ token				|string		|R			|用户登录后token，没有登录则为空字符串 --
 </table>
 <p>示例：</p>
 <pre><code>{
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;items&quot;: {
-            &quot;abnormalTotal&quot;: [
-                &quot;32050200041320000658&quot;,
-                &quot;32050000001326000020&quot;,
-                &quot;32050000001326000021&quot;
-                ]
-            &quot;validTotal&quot;: [
-                &quot;32050200041320000658&quot;,
-                &quot;32050000001326000020&quot;,
-                &quot;32050000001326000021&quot;,
-                &quot;32050000001326000022&quot;,
-                &quot;32050000001326000023&quot;,
-                &quot;32050000001326000072&quot;,
-                &quot;32050000001326000073&quot;,
-                &quot;32050000001326000038&quot;,
-                &quot;32050000001326000039&quot;,
-                &quot;32050800001326000025&quot;,
-                &quot;32058254001310206377&quot;,
-                &quot;32058254001310206429&quot;,
-                &quot;32058254001310206481&quot;,
-                &quot;32058254001310206583&quot;,
-                &quot;32058254001310206632&quot;,
-                &quot;32058252001310209063&quot;,
-                &quot;32058252001310209112&quot;,
-                &quot;32058252001310209164&quot;,
-                &quot;32058252001310209213&quot;,
-                &quot;32058252001310209265&quot;,
-                &quot;32058252001310209318&quot;,
-                &quot;32058252001310208155&quot;,
-                &quot;32058252001310208207&quot;,
-                &quot;32059352001320100092&quot;,
-                &quot;32059352001320100093&quot;
-            ]
-        },
+    &quot;results&quot;: {
+        &quot;abnormalTotal&quot;: [
+            &quot;32050200041320000658&quot;,
+            &quot;32050000001326000020&quot;,
+            &quot;32050000001326000021&quot;,
+            &quot;32050000001326000022&quot;
+        ]
+        &quot;validTotal&quot;: [
+            &quot;32050200041320000658&quot;,
+            &quot;32050000001326000020&quot;,
+            &quot;32050000001326000021&quot;,
+            &quot;32050000001326000022&quot;,
+            &quot;32050000001326000023&quot;,
+            &quot;32050000001326000072&quot;,
+            &quot;32050000001326000073&quot;,
+            &quot;32050000001326000038&quot;,
+            &quot;32050000001326000039&quot;,
+            &quot;32050800001326000025&quot;,
+            &quot;32058254001310206377&quot;,
+            &quot;32058254001310206429&quot;,
+            &quot;32058254001310206481&quot;,
+            &quot;32058254001310206583&quot;,
+            &quot;32058254001310206632&quot;,
+            &quot;32058252001310209063&quot;,
+            &quot;32058252001310209112&quot;,
+            &quot;32058252001310209164&quot;,
+            &quot;32058252001310209213&quot;,
+            &quot;32058252001310209265&quot;,
+            &quot;32058252001310209318&quot;,
+            &quot;32058252001310208155&quot;,
+            &quot;32058252001310208207&quot;,
+            &quot;32059352001320100092&quot;,
+            &quot;32059352001320100093&quot;
+        ]
     }
 }
 </code></pre><h2 id="3-附录a-响应码说明">
