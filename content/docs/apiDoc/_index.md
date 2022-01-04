@@ -142,7 +142,7 @@ results						|object		|R			|&nbsp;
 
 
 ### 2.2 获取设备延迟率
-- **接口说明：** 设备延迟率
+- **接口说明：** 设备延迟率 tips:延迟：请求时间-抓拍时间>30
 - **接口地址：** /external/device_delay_rate
 - **接口方法：** GET
 
@@ -210,7 +210,7 @@ results						|object		|R			|&nbsp;
 
 
 ### 2.3 获取设备倒挂率
-- **接口说明：** 设备倒挂率
+- **接口说明：** 设备倒挂率 tips:倒挂：请求时间<抓拍时间
 - **接口地址：** /external/device_invert
 - **接口方法：** GET
 
