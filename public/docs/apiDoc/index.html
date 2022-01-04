@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b8f522d2a3576a63b5b707b78e8dc30d49fcc1a58628204d01ed50e57cce53e6.js" integrity="sha256-uPUi0qNXamO1twe3jo3DDUn8waWGKCBNAe1Q5XzOU&#43;Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.44fbf78615c86666a223f95c0abc4488e7128616704d9f0a09313b5ed53eb444.js" integrity="sha256-RPv3hhXIZmaiI/lcCrxEiOcShhZwTZ8KCTE7XtU&#43;tEQ=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://doc.gleemanx.com/docs/apiDoc/index.xml" title="Gleemanx's doc" />
@@ -599,41 +599,21 @@ GET接口，无参数</p>
 <p>示例：</p>
 <pre><code>{
     &quot;results&quot;: {
-        &quot;invertTotal&quot;: [
-            &quot;32050200041320000658&quot;,
-            &quot;32050000001326000020&quot;,
-            &quot;32050000001326000021&quot;,
-            &quot;32050000001326000022&quot;
-        ]
-        &quot;validTotal&quot;: [
-            &quot;32050200041320000658&quot;,
-            &quot;32050000001326000020&quot;,
-            &quot;32050000001326000021&quot;,
-            &quot;32050000001326000022&quot;,
-            &quot;32050000001326000023&quot;,
-            &quot;32050000001326000072&quot;,
-            &quot;32050000001326000073&quot;,
-            &quot;32050000001326000038&quot;,
-            &quot;32050000001326000039&quot;,
-            &quot;32050800001326000025&quot;,
-            &quot;32058254001310206377&quot;,
-            &quot;32058254001310206429&quot;,
-            &quot;32058254001310206481&quot;,
-            &quot;32058254001310206583&quot;,
-            &quot;32058254001310206632&quot;,
-            &quot;32058252001310209063&quot;,
-            &quot;32058252001310209112&quot;,
-            &quot;32058252001310209164&quot;,
-            &quot;32058252001310209213&quot;,
-            &quot;32058252001310209265&quot;,
-            &quot;32058252001310209318&quot;,
-            &quot;32058252001310208155&quot;,
-            &quot;32058252001310208207&quot;,
-            &quot;32059352001320100092&quot;,
-            &quot;32059352001320100093&quot;
+        &quot;qualifiedTotal&quot;: [
+            &quot;0&quot;,
+            &quot;2&quot;,
+            &quot;1475740266936668179&quot;
+        ],
+        &quot;checkTotal&quot;: [
+            &quot;0&quot;,
+            &quot;1475740266936668179&quot;,
+            &quot;1&quot;,
+            &quot;2&quot;
         ]
     }
 }
+   
+
 </code></pre><h3 id="25-场景图url异常率">
   2.5 场景图URL异常率
   <a class="anchor" href="#25-%e5%9c%ba%e6%99%af%e5%9b%beurl%e5%bc%82%e5%b8%b8%e7%8e%87">#</a>
@@ -736,7 +716,7 @@ GET接口，无参数</p>
 <td style="text-align:left"> abnormalTotal</td>
 <td style="text-align:left">[]string</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">接收的场景图URL访问异常图片编号数组</td>
+<td style="text-align:left">接收的场景图不可用的图片编号数组</td>
 </tr>
 <tr>
 <td style="text-align:left"> receiveTotal</td>
@@ -819,8 +799,8 @@ device_id			         	|int		|R			|设备ID</p>
 <p>示例：</p>
 <pre><code>{
     &quot;results&quot;: {
-        &quot;validTotal&quot;: 0,
-        &quot;receiveTotal&quot;: 0
+        &quot;validTotal&quot;: 2,
+        &quot;receiveTotal&quot;: 111
     }
 }
 </code></pre><h3 id="28-抓拍量突降设备占比">
@@ -946,7 +926,7 @@ GET接口，无参数</p>
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/c69eedf899cb90108edfd990d2d58ef4991e47de" title='Last modified by gleemanx | January 4, 2022' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/8af4eaf6abb5cf42f51e77ce704c2dfb0bd4fa06" title='Last modified by gleemanx | January 4, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>January 4, 2022</span>
     </a>
