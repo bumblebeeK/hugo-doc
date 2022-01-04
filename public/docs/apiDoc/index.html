@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.970621fca22c74f067f81d9b939ea7ebca5819729613655cbce4be851ac5d746.js" integrity="sha256-lwYh/KIsdPBn&#43;B2bk56n68pYGXKWE2VcvOS&#43;hRrF10Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b8f522d2a3576a63b5b707b78e8dc30d49fcc1a58628204d01ed50e57cce53e6.js" integrity="sha256-uPUi0qNXamO1twe3jo3DDUn8waWGKCBNAe1Q5XzOU&#43;Y=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://doc.gleemanx.com/docs/apiDoc/index.xml" title="Gleemanx's doc" />
@@ -372,7 +372,7 @@ GET接口，无参数</p>
   <a class="anchor" href="#22-%e8%8e%b7%e5%8f%96%e8%ae%be%e5%a4%87%e5%bb%b6%e8%bf%9f%e7%8e%87">#</a>
 </h3>
 <ul>
-<li><strong>接口说明：</strong> 设备延迟率 tips:延迟：请求时间-抓拍时间&gt;30</li>
+<li><strong>接口说明：</strong> 设备延迟率 tips:延迟：请求时间-抓拍时间&gt;30s</li>
 <li><strong>接口地址：</strong> /external/device_delay_rate</li>
 <li><strong>接口方法：</strong> GET</li>
 </ul>
@@ -545,6 +545,372 @@ GET接口，无参数</p>
         ]
     }
 }
+</code></pre><h3 id="24-获取报文合格率">
+  2.4 获取报文合格率
+  <a class="anchor" href="#24-%e8%8e%b7%e5%8f%96%e6%8a%a5%e6%96%87%e5%90%88%e6%a0%bc%e7%8e%87">#</a>
+</h3>
+<ul>
+<li><strong>接口说明：</strong> 报文合格率 tips:合格设备数组：所有有效报文数等于所有报文数的设备编号</li>
+<li><strong>接口地址：</strong> /external/message_qualified</li>
+<li><strong>接口方法：</strong> GET</li>
+</ul>
+<h4 id="241-请求参数">
+  2.4.1 请求参数
+  <a class="anchor" href="#241-%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
+</h4>
+<p>参数名称						|类型		|出现要求	|描述<br>
+GET接口，无参数</p>
+<p>请求示例：
+该接口为GET接口，且无参数，直接访问即可。</p>
+<h4 id="242-返回结果">
+  2.4.2 返回结果
+  <a class="anchor" href="#242-%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">出现要求</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">results</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left"> qualifiedTotal</td>
+<td style="text-align:left">[]string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">抽检合格报文设备数组</td>
+</tr>
+<tr>
+<td style="text-align:left"> checkTotal</td>
+<td style="text-align:left">[]string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">有效的设备号数组</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<pre><code>{
+    &quot;results&quot;: {
+        &quot;invertTotal&quot;: [
+            &quot;32050200041320000658&quot;,
+            &quot;32050000001326000020&quot;,
+            &quot;32050000001326000021&quot;,
+            &quot;32050000001326000022&quot;
+        ]
+        &quot;validTotal&quot;: [
+            &quot;32050200041320000658&quot;,
+            &quot;32050000001326000020&quot;,
+            &quot;32050000001326000021&quot;,
+            &quot;32050000001326000022&quot;,
+            &quot;32050000001326000023&quot;,
+            &quot;32050000001326000072&quot;,
+            &quot;32050000001326000073&quot;,
+            &quot;32050000001326000038&quot;,
+            &quot;32050000001326000039&quot;,
+            &quot;32050800001326000025&quot;,
+            &quot;32058254001310206377&quot;,
+            &quot;32058254001310206429&quot;,
+            &quot;32058254001310206481&quot;,
+            &quot;32058254001310206583&quot;,
+            &quot;32058254001310206632&quot;,
+            &quot;32058252001310209063&quot;,
+            &quot;32058252001310209112&quot;,
+            &quot;32058252001310209164&quot;,
+            &quot;32058252001310209213&quot;,
+            &quot;32058252001310209265&quot;,
+            &quot;32058252001310209318&quot;,
+            &quot;32058252001310208155&quot;,
+            &quot;32058252001310208207&quot;,
+            &quot;32059352001320100092&quot;,
+            &quot;32059352001320100093&quot;
+        ]
+    }
+}
+</code></pre><h3 id="25-场景图url异常率">
+  2.5 场景图URL异常率
+  <a class="anchor" href="#25-%e5%9c%ba%e6%99%af%e5%9b%beurl%e5%bc%82%e5%b8%b8%e7%8e%87">#</a>
+</h3>
+<ul>
+<li><strong>接口说明：</strong> 场景图URL异常率 tips:接收的场景图URL访问异常：code为5011014  接收的场景图图片总数： code 为 5011014 和 2010014的图片数之和</li>
+<li><strong>接口地址：</strong> /external/scene_graph_url_abnormal</li>
+<li><strong>接口方法：</strong> GET</li>
+</ul>
+<h4 id="251-请求参数">
+  2.5.1 请求参数
+  <a class="anchor" href="#251-%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
+</h4>
+<p>参数名称						|类型		|出现要求	|描述<br>
+GET接口，无参数</p>
+<p>请求示例：
+该接口为GET接口，且无参数，直接访问即可。</p>
+<h4 id="252-返回结果">
+  2.5.2 返回结果
+  <a class="anchor" href="#252-%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">出现要求</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">results</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left"> abnormalTotal</td>
+<td style="text-align:left">[]string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">接收的场景图URL访问异常图片编号数组</td>
+</tr>
+<tr>
+<td style="text-align:left"> receiveTotal</td>
+<td style="text-align:left">[]string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">接收的场景图图片编号数组</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<pre><code>{
+    &quot;results&quot;: {
+        &quot;abnormalTotal&quot;: 111,
+        &quot;receiveTotal&quot;: [
+            &quot;222&quot;,
+            &quot;111&quot;
+        ]
+    }
+}
+</code></pre><h3 id="26-场景图不可用率">
+  2.6 场景图不可用率
+  <a class="anchor" href="#26-%e5%9c%ba%e6%99%af%e5%9b%be%e4%b8%8d%e5%8f%af%e7%94%a8%e7%8e%87">#</a>
+</h3>
+<ul>
+<li><strong>接口说明：</strong> 场景图不可用率 tips:接收的场景图URL访问异常：code为5010014  接收的场景图图片总数： code 为 2010014 和 5010014的图片数之和</li>
+<li><strong>接口地址：</strong> /external/scene_graph_unavailable</li>
+<li><strong>接口方法：</strong> GET</li>
+</ul>
+<h4 id="261-请求参数">
+  2.6.1 请求参数
+  <a class="anchor" href="#261-%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
+</h4>
+<p>参数名称						|类型		|出现要求	|描述<br>
+GET接口，无参数</p>
+<p>请求示例：
+该接口为GET接口，且无参数，直接访问即可。</p>
+<h4 id="262-返回结果">
+  2.6.2 返回结果
+  <a class="anchor" href="#262-%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">出现要求</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">results</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left"> abnormalTotal</td>
+<td style="text-align:left">[]string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">接收的场景图URL访问异常图片编号数组</td>
+</tr>
+<tr>
+<td style="text-align:left"> receiveTotal</td>
+<td style="text-align:left">[]string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">接收的场景图图片编号数组</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<pre><code>{
+    &quot;results&quot;: {
+        &quot;abnormalTotal&quot;: [
+            &quot;36&quot;
+        ],
+        &quot;receiveTotal&quot;: [
+            &quot;19&quot;,
+            &quot;15&quot;,
+            &quot;16&quot;,
+            &quot;3333&quot;,
+            &quot;2&quot;,
+            &quot;3&quot;,
+            &quot;4&quot;,
+            &quot;5&quot;,
+            &quot;6&quot;
+        ]
+    }
+}
+</code></pre><h3 id="27-人脸图不合格率">
+  2.7 人脸图不合格率
+  <a class="anchor" href="#27-%e4%ba%ba%e8%84%b8%e5%9b%be%e4%b8%8d%e5%90%88%e6%a0%bc%e7%8e%87">#</a>
+</h3>
+<ul>
+<li><strong>接口说明：</strong> 人脸图不合格率 tips:根据设备号获取有效人脸图片数和人脸图片总数</li>
+<li><strong>接口地址：</strong> /external/face_disqualification?device_id=?</li>
+<li><strong>接口方法：</strong> GET</li>
+</ul>
+<h4 id="271-请求参数">
+  2.7.1 请求参数
+  <a class="anchor" href="#271-%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
+</h4>
+<p>参数名称						|类型		|出现要求	|描述<br>
+device_id			         	|int		|R			|设备ID</p>
+<p>请求示例：
+/external/face_disqualification?device_id=32058252001310208207</p>
+<h4 id="272-返回结果">
+  2.7.2 返回结果
+  <a class="anchor" href="#272-%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">出现要求</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">results</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left"> validTotal</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">接收的有效人脸图片数</td>
+</tr>
+<tr>
+<td style="text-align:left"> receiveTotal</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">接收的人脸图片总数</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<pre><code>{
+    &quot;results&quot;: {
+        &quot;validTotal&quot;: 0,
+        &quot;receiveTotal&quot;: 0
+    }
+}
+</code></pre><h3 id="28-抓拍量突降设备占比">
+  2.8 抓拍量突降设备占比
+  <a class="anchor" href="#28-%e6%8a%93%e6%8b%8d%e9%87%8f%e7%aa%81%e9%99%8d%e8%ae%be%e5%a4%87%e5%8d%a0%e6%af%94">#</a>
+</h3>
+<ul>
+<li><strong>接口说明：</strong> 抓拍量突降设备占比 tips:抓拍突降：（昨天的抓拍量-前天的抓拍量）/昨天的抓拍量&gt;0.2</li>
+<li><strong>接口地址：</strong> /external/device_capture_undershoot</li>
+<li><strong>接口方法：</strong> GET</li>
+</ul>
+<h4 id="281-请求参数">
+  2.8.1 请求参数
+  <a class="anchor" href="#281-%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
+</h4>
+<p>参数名称						|类型		|出现要求	|描述<br>
+GET接口，无参数</p>
+<p>请求示例：
+该接口为GET接口，且无参数，直接访问即可。</p>
+<h4 id="282-返回结果">
+  2.8.2 返回结果
+  <a class="anchor" href="#282-%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">出现要求</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">results</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left"> </td>
+</tr>
+<tr>
+<td style="text-align:left"> undershootTotal</td>
+<td style="text-align:left">[]string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">抓拍突降的有效的设备号数组</td>
+</tr>
+<tr>
+<td style="text-align:left"> validTotal</td>
+<td style="text-align:left">[]string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">所有有效的设备号数组</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<pre><code>{
+    &quot;results&quot;: {
+        &quot;undershootTotal&quot;: [
+            &quot;32050200041320000658&quot;,
+            &quot;32050000001326000020&quot;,
+            &quot;32050000001326000021&quot;
+        ]
+        &quot;validTotal&quot;: [
+            &quot;32050200041320000658&quot;,
+            &quot;32050000001326000020&quot;,
+            &quot;32050000001326000021&quot;,
+            &quot;32050000001326000022&quot;,
+            &quot;32050000001326000023&quot;,
+            &quot;32050000001326000072&quot;,
+            &quot;32050000001326000073&quot;,
+            &quot;32050000001326000038&quot;,
+            &quot;32050000001326000039&quot;,
+            &quot;32050800001326000025&quot;,
+            &quot;32058254001310206377&quot;,
+            &quot;32058254001310206429&quot;,
+            &quot;32058254001310206481&quot;,
+            &quot;32058254001310206583&quot;,
+            &quot;32058254001310206632&quot;,
+            &quot;32058252001310209063&quot;,
+            &quot;32058252001310209112&quot;,
+            &quot;32058252001310209164&quot;,
+            &quot;32058252001310209213&quot;,
+            &quot;32058252001310209265&quot;,
+            &quot;32058252001310209318&quot;,
+            &quot;32058252001310208155&quot;,
+            &quot;32058252001310208207&quot;,
+            &quot;32059352001320100092&quot;,
+            &quot;32059352001320100093&quot;
+        ]
+    }
+}
 </code></pre><h2 id="3-附录a-响应码说明">
   3 附录A 响应码说明
   <a class="anchor" href="#3-%e9%99%84%e5%bd%95a-%e5%93%8d%e5%ba%94%e7%a0%81%e8%af%b4%e6%98%8e">#</a>
@@ -580,7 +946,7 @@ GET接口，无参数</p>
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/d7a719fbeb49e0978932a8d5955a6c690e246220" title='Last modified by gleemanx | January 4, 2022' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/c69eedf899cb90108edfd990d2d58ef4991e47de" title='Last modified by gleemanx | January 4, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>January 4, 2022</span>
     </a>
