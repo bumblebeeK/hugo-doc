@@ -297,8 +297,8 @@ GET接口，无参数
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
 results						|object		|R			|&nbsp;
-&emsp;qualifiedTotal				|[]string		|R			|抽检合格报文设备数组
-&emsp;checkTotal				|[]string		|R			|有效的设备号数组
+&emsp;qualifiedTotal				|[]string		|R			|抽检合格报文编号数组
+&emsp;checkTotal				|[]string		|R			|有效的报文编号数组
 
 
 
