@@ -358,7 +358,7 @@ page_size			         	|int		|O		    |分页大小
 results					  	|object		|R			|&nbsp;
 &emsp;validTotal				|int		|R			|接收的有效人脸图片数
 &emsp;receiveTotal				|int		|R			|接收的人脸图片总数
-&emsp;deviceId				    |int		|R			|设备编号
+&emsp;deviceId				    |string		|R			|设备编号
 示例：
 
 ```
