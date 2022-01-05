@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.3ad79329017359d1efdfcee6c702caa67bd5c48db940904c92b5d774ad219ac7.js" integrity="sha256-OteTKQFzWdHv387mxwLKpnvVxI25QJBMkrXXdK0hmsc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7ab6d53b1861ae154a47dd248bebd1d3610b841af34de255a1a94dddeafbc735.js" integrity="sha256-erbVOxhhrhVKR90ki&#43;vR02ELhBrzTeJVoalN3er7xzU=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://doc.gleemanx.com/docs/apiDoc/index.xml" title="Gleemanx's doc" />
@@ -321,14 +321,9 @@ GET接口，无参数</p>
 <td style="text-align:left">R</td>
 <td style="text-align:left">异常设备号数组</td>
 </tr>
-<tr>
-<td style="text-align:left"> validTotal</td>
-<td style="text-align:left">[]string</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left">有效设备号数组</td>
-</tr>
 </tbody>
 </table>
+<!-- &emsp;validTotal				|[]string		|R			|有效设备号数组 -->
 <p>示例：</p>
 <pre><code>{
     &quot;results&quot;: {
@@ -337,33 +332,6 @@ GET接口，无参数</p>
             &quot;32050000001326000020&quot;,
             &quot;32050000001326000021&quot;,
             &quot;32050000001326000022&quot;
-        ]
-        &quot;validTotal&quot;: [
-            &quot;32050200041320000658&quot;,
-            &quot;32050000001326000020&quot;,
-            &quot;32050000001326000021&quot;,
-            &quot;32050000001326000022&quot;,
-            &quot;32050000001326000023&quot;,
-            &quot;32050000001326000072&quot;,
-            &quot;32050000001326000073&quot;,
-            &quot;32050000001326000038&quot;,
-            &quot;32050000001326000039&quot;,
-            &quot;32050800001326000025&quot;,
-            &quot;32058254001310206377&quot;,
-            &quot;32058254001310206429&quot;,
-            &quot;32058254001310206481&quot;,
-            &quot;32058254001310206583&quot;,
-            &quot;32058254001310206632&quot;,
-            &quot;32058252001310209063&quot;,
-            &quot;32058252001310209112&quot;,
-            &quot;32058252001310209164&quot;,
-            &quot;32058252001310209213&quot;,
-            &quot;32058252001310209265&quot;,
-            &quot;32058252001310209318&quot;,
-            &quot;32058252001310208155&quot;,
-            &quot;32058252001310208207&quot;,
-            &quot;32059352001320100092&quot;,
-            &quot;32059352001320100093&quot;
         ]
     }
 }
@@ -410,14 +378,9 @@ GET接口，无参数</p>
 <td style="text-align:left">R</td>
 <td style="text-align:left">延迟的设备号数组</td>
 </tr>
-<tr>
-<td style="text-align:left"> validTotal</td>
-<td style="text-align:left">[]string</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left">有效的设备号数组</td>
-</tr>
 </tbody>
 </table>
+<!-- &emsp;validTotal				|[]string		|R			|有效的设备号数组 -->
 <p>示例：</p>
 <pre><code>{
     &quot;results&quot;: {
@@ -427,33 +390,6 @@ GET接口，无参数</p>
             &quot;32050000001326000021&quot;,
             &quot;32050000001326000022&quot;
         ]
-        &quot;validTotal&quot;: [
-            &quot;32050200041320000658&quot;,
-            &quot;32050000001326000020&quot;,
-            &quot;32050000001326000021&quot;,
-            &quot;32050000001326000022&quot;,
-            &quot;32050000001326000023&quot;,
-            &quot;32050000001326000072&quot;,
-            &quot;32050000001326000073&quot;,
-            &quot;32050000001326000038&quot;,
-            &quot;32050000001326000039&quot;,
-            &quot;32050800001326000025&quot;,
-            &quot;32058254001310206377&quot;,
-            &quot;32058254001310206429&quot;,
-            &quot;32058254001310206481&quot;,
-            &quot;32058254001310206583&quot;,
-            &quot;32058254001310206632&quot;,
-            &quot;32058252001310209063&quot;,
-            &quot;32058252001310209112&quot;,
-            &quot;32058252001310209164&quot;,
-            &quot;32058252001310209213&quot;,
-            &quot;32058252001310209265&quot;,
-            &quot;32058252001310209318&quot;,
-            &quot;32058252001310208155&quot;,
-            &quot;32058252001310208207&quot;,
-            &quot;32059352001320100092&quot;,
-            &quot;32059352001320100093&quot;
-        ]
     }
 }
 </code></pre><h3 id="23-获取设备倒挂率">
@@ -461,7 +397,7 @@ GET接口，无参数</p>
   <a class="anchor" href="#23-%e8%8e%b7%e5%8f%96%e8%ae%be%e5%a4%87%e5%80%92%e6%8c%82%e7%8e%87">#</a>
 </h3>
 <ul>
-<li><strong>接口说明：</strong> 设备倒挂率 tips:倒挂：请求时间&lt;抓拍时间</li>
+<li><strong>接口说明：</strong> 倒挂：请求时间&lt;抓拍时间</li>
 <li><strong>接口地址：</strong> /external/device_invert</li>
 <li><strong>接口方法：</strong> GET</li>
 </ul>
@@ -516,33 +452,6 @@ GET接口，无参数</p>
             &quot;32050000001326000021&quot;,
             &quot;32050000001326000022&quot;
         ]
-        &quot;validTotal&quot;: [
-            &quot;32050200041320000658&quot;,
-            &quot;32050000001326000020&quot;,
-            &quot;32050000001326000021&quot;,
-            &quot;32050000001326000022&quot;,
-            &quot;32050000001326000023&quot;,
-            &quot;32050000001326000072&quot;,
-            &quot;32050000001326000073&quot;,
-            &quot;32050000001326000038&quot;,
-            &quot;32050000001326000039&quot;,
-            &quot;32050800001326000025&quot;,
-            &quot;32058254001310206377&quot;,
-            &quot;32058254001310206429&quot;,
-            &quot;32058254001310206481&quot;,
-            &quot;32058254001310206583&quot;,
-            &quot;32058254001310206632&quot;,
-            &quot;32058252001310209063&quot;,
-            &quot;32058252001310209112&quot;,
-            &quot;32058252001310209164&quot;,
-            &quot;32058252001310209213&quot;,
-            &quot;32058252001310209265&quot;,
-            &quot;32058252001310209318&quot;,
-            &quot;32058252001310208155&quot;,
-            &quot;32058252001310208207&quot;,
-            &quot;32059352001320100092&quot;,
-            &quot;32059352001320100093&quot;
-        ]
     }
 }
 </code></pre><h3 id="24-获取报文合格率">
@@ -550,7 +459,7 @@ GET接口，无参数</p>
   <a class="anchor" href="#24-%e8%8e%b7%e5%8f%96%e6%8a%a5%e6%96%87%e5%90%88%e6%a0%bc%e7%8e%87">#</a>
 </h3>
 <ul>
-<li><strong>接口说明：</strong> 报文合格率 tips:合格设备数组：所有有效报文数等于所有报文数的设备编号</li>
+<li><strong>接口说明：</strong> 合格设备数组：所有有效报文数等于所有报文数的设备编号</li>
 <li><strong>接口地址：</strong> /external/message_qualified</li>
 <li><strong>接口方法：</strong> GET</li>
 </ul>
@@ -620,7 +529,7 @@ GET接口，无参数</p>
   <a class="anchor" href="#25-%e5%9c%ba%e6%99%af%e5%9b%beurl%e5%bc%82%e5%b8%b8%e7%8e%87">#</a>
 </h3>
 <ul>
-<li><strong>接口说明：</strong> 接收的场景图URL访问异常：code为5011014  接收的场景图图片总数： code 为 5011014 和 2010014的图片数之和</li>
+<li><strong>接口说明：</strong> 接收的场景图URL访问异常：code为5011014的图片的设备号数组      接收的场景图图片总数：code为5011014和2010014的图片的设备号数组</li>
 <li><strong>接口地址：</strong> /external/scene_graph_url_abnormal</li>
 <li><strong>接口方法：</strong> GET</li>
 </ul>
@@ -684,7 +593,7 @@ GET接口，无参数</p>
   <a class="anchor" href="#26-%e5%9c%ba%e6%99%af%e5%9b%be%e4%b8%8d%e5%8f%af%e7%94%a8%e7%8e%87">#</a>
 </h3>
 <ul>
-<li><strong>接口说明：</strong> 接收的场景图URL访问异常：code为5010014  接收的场景图图片总数： code为2010014和5010014的图片数之和</li>
+<li><strong>接口说明：</strong> 接收的场景图URL访问异常：code为5010014的图片的设备号数组        接收的场景图图片总数：code为2010014和5010014的图片的设备号数组</li>
 <li><strong>接口地址：</strong> /external/scene_graph_unavailable</li>
 <li><strong>接口方法：</strong> GET</li>
 </ul>
@@ -948,7 +857,7 @@ results						|object		|R			|&nbsp;
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/d67eb2e9c0d21dd80c1df56c03e7841211d85bc8" title='Last modified by gleemanx | January 5, 2022' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/b7c5a74ace101c8eab20d58d0e3e31857ea08c2e" title='Last modified by gleemanx | January 5, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>January 5, 2022</span>
     </a>
