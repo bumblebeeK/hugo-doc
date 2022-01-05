@@ -92,8 +92,7 @@ GET接口，无参数
 
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
-results						|object		|R			|&nbsp;
-&emsp;abnormalTotal				|[]string		|R			|异常设备号数组
+results						|object		|R			|所有检测状态异的设备编号
 <!-- &emsp;validTotal				|[]string		|R			|有效设备号数组 -->
 
 
@@ -102,14 +101,12 @@ results						|object		|R			|&nbsp;
 
 ```
 {
-    "results": {
-        "abnormalTotal": [
+    "results":  [
             "32050200041320000658",
             "32050000001326000020",
             "32050000001326000021",
             "32050000001326000022"
         ]
-    }
 }
 ```
 
@@ -133,8 +130,7 @@ GET接口，无参数
 
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
-results						|object		|R			|&nbsp;
-&emsp;delayTotal				|[]string		|R			|延迟的设备号数组
+results						|object		|R			|所有延迟的设备号数组编号
 <!-- &emsp;validTotal				|[]string		|R			|有效的设备号数组 -->
 
 
@@ -143,14 +139,12 @@ results						|object		|R			|&nbsp;
 
 ```
 {
-    "results": {
-        "delayTotal": [
+    "results": [
             "32050200041320000658",
             "32050000001326000020",
             "32050000001326000021",
             "32050000001326000022"
         ]
-    }
 }
 ```
 
@@ -174,22 +168,19 @@ GET接口，无参数
 
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
-results						|object		|R			|&nbsp;
-&emsp;invertTotal				|[]string		|R			|倒挂的设备号数组
+results						|object		|R			|所有倒挂的设备编号数组
 
 
 示例：
 
 ```
 {
-    "results": {
-        "invertTotal": [
+    "results": [
             "32050200041320000658",
             "32050000001326000020",
             "32050000001326000021",
             "32050000001326000022"
         ]
-    }
 }
 ```
 
@@ -214,8 +205,9 @@ GET接口，无参数
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
 results						|object		|R			|&nbsp;
-&emsp;qualifiedTotal				|map		|R			|抽检合格的设备map key为设备编号 value为报文数量
-&emsp;checkTotal				|map		|R			|产生有效的报文的设备map  key为设备编号 value为报文数量
+&emsp;qualified_total				|int		|R			|设备编号对应的抽检合格报文数量
+&emsp;check_total				|int		|R			|设备编号对应的报文接受数量
+&emsp;device_id				|string		|R			|设备编号
 
 
 
@@ -223,18 +215,23 @@ results						|object		|R			|&nbsp;
 
 ```
 {
-    "results": {
-        "qualifiedTotal": {
-            "32050651001320100630": 1,
-            "32058200001310000401": 1,
-            "32059423001310002240": 1
+    "results": [
+        {
+            "qualified_total": 1,
+            "check_total": 1,
+            "device_id": "32050651001320100630"
         },
-        "checkTotal": {
-            "32050651001320100630": 1,
-            "32058200001310000401": 2,
-            "32059423001310002240": 2
+        {
+            "qualified_total": 1,
+            "check_total": 2,
+            "device_id": "32058200001310000401"
+        },
+        {
+            "qualified_total": 1,
+            "check_total": 2,
+            "device_id": "32059423001310002240"
         }
-    }
+    ]
 }
    
 
@@ -260,24 +257,30 @@ GET接口，无参数
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
 results						|object		|R			|&nbsp;
-&emsp;abnormalTotal				|map		|R			|接收的场景图URL访问异常图片的设备map key为设备编号 value为图片数量
-&emsp;receiveTotal				|map		|R			|接收的场景图图片的设备map key为设备编号 value为图片数量
+&emsp;abnormal_total				|int		|R			|设备编号对应的接收的场景图URL访问异常图片的数量
+&emsp;receive_total				|int		|R			|设备编号对应的接收的场景图图片数量
+&emsp;device_id				|string		|R			|设备编号
 
 
 
 示例：
 
 ```
+
+
 {
-    "results": {
-        "abnormalTotal": {
-            "32058200001310000426": 1
+    "results": [
+        {
+            "abnormal_total": 0,
+            "receive_total": 1,
+            "device_id": "32058200001310000426"
         },
-        "receiveTotal": {
-            "32058200001310000426": 2,
-            "32059423001310002241": 1
+        {
+            "abnormal_total": 0,
+            "receive_total": 1,
+            "device_id": "32059423001310002241"
         }
-    }
+    ]
 }
 ```
 
@@ -302,37 +305,44 @@ GET接口，无参数
 #### 2.6.2 返回结果
 
 参数名称						|类型		|出现要求	|描述  
-:----						|:---		|:------	|:---	
-results						|object		|R			|&nbsp;
-&emsp;abnormalTotal				|map		|R			|接收的场景图不可用的图片的设备map key为设备编号 value为图片数量
-&emsp;receiveTotal				|map		|R			|接收的场景图的设备map key为设备编号 value为图片数量
+:----					    	|:---		|:------	|:---	
+results					    	|object		|R			|&nbsp;
+&emsp;abnormal_total				|int		|R			|设备编号对应的接收的场景图不可用的图片数量
+&emsp;receive_total				|int		|R			|设备编号对应的接收的场景图图片数量
+&emsp;device_id				|string		|R			|设备编号
 
 
 
 示例：
 
 ```
+
+
 {
-    "results": {
-        "abnormalTotal": {
-            "32058254001310206429": 1
+    "results": [
+        {
+            "abnormal_total": 0,
+            "receive_total": 2,
+            "device_id": "32058254001310206377"
         },
-        "receiveTotal": {
-            "30250667001320101001": 8,
-            "32058200001310000426": 3,
-            "32058253001324076656": 4,
-            "32058254001310206377": 2,
-            "32058254001310206429": 4,
-            "32058263051320900005": 2,
-            "32058263051320900031": 2,
-            "32058368001310149987": 4,
-            "32059409001310013420": 1,
-            "32059423001310002240": 12,
-            "32059423001310002241": 2,
-            "32059453011320022001": 6
+        {
+            "abnormal_total": 0,
+            "receive_total": 3,
+            "device_id": "32058200001310000426"
+        },
+        {
+            "abnormal_total": 0,
+            "receive_total": 2,
+            "device_id": "32058263051320900031"
+        },
+        {
+            "abnormal_total": 0,
+            "receive_total": 12,
+            "device_id": "32059423001310002240"
         }
-    }
+    ]
 }
+
 ```
 
 
@@ -354,9 +364,9 @@ device_id                       |int		|O			|设备编号
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
 results					  	|object		|R			|&nbsp;
-&emsp;validTotal				|int		|R			|接收的有效人脸图片数
-&emsp;receiveTotal				|int		|R			|接收的人脸图片总数
-&emsp;deviceId				    |string		|R			|设备编号
+&emsp;valid_total				|int		|R			|接收的有效人脸图片数
+&emsp;receive_total				|int		|R			|接收的人脸图片总数
+&emsp;device_id				    |string		|R			|设备编号
 示例：
 
 ```
@@ -364,13 +374,13 @@ results					  	|object		|R			|&nbsp;
     "results": [
         {
             "validTotal": 9756,
-            "receiveTotal": 12179,
-            "deviceId": "32058366001310319301"
+            "receive_total": 12179,
+            "device_id": "32058366001310319301"
         },
         {
             "validTotal": 16751,
-            "receiveTotal": 18545,
-            "deviceId": "32059423001310002248"
+            "receive_total": 18545,
+            "device_id": "32059423001310002248"
         }
     ]
 }

@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6a02203fab19b2fc5b203a5bc2983547d68f866d607008a405eb8144455d9807.js" integrity="sha256-agIgP6sZsvxbIDpbwpg1R9aPhm1gcAikBeuBREVdmAc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1f02b84f88c3971d98a676b5a0591f353d40690eb11fb5dc4e784cfea55af827.js" integrity="sha256-HwK4T4jDlx2Ypna1oFkfNT1AaQ6xH7XcTnhM/qVa&#43;Cc=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://doc.gleemanx.com/docs/apiDoc/index.xml" title="Gleemanx's doc" />
@@ -313,27 +313,19 @@ GET接口，无参数</p>
 <td style="text-align:left">results</td>
 <td style="text-align:left">object</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left"> abnormalTotal</td>
-<td style="text-align:left">[]string</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left">异常设备号数组</td>
+<td style="text-align:left">所有检测状态异的设备编号</td>
 </tr>
 </tbody>
 </table>
 <!-- &emsp;validTotal				|[]string		|R			|有效设备号数组 -->
 <p>示例：</p>
 <pre><code>{
-    &quot;results&quot;: {
-        &quot;abnormalTotal&quot;: [
+    &quot;results&quot;:  [
             &quot;32050200041320000658&quot;,
             &quot;32050000001326000020&quot;,
             &quot;32050000001326000021&quot;,
             &quot;32050000001326000022&quot;
         ]
-    }
 }
 </code></pre><h3 id="22-获取设备延迟率">
   2.2 获取设备延迟率
@@ -370,27 +362,19 @@ GET接口，无参数</p>
 <td style="text-align:left">results</td>
 <td style="text-align:left">object</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left"> delayTotal</td>
-<td style="text-align:left">[]string</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left">延迟的设备号数组</td>
+<td style="text-align:left">所有延迟的设备号数组编号</td>
 </tr>
 </tbody>
 </table>
 <!-- &emsp;validTotal				|[]string		|R			|有效的设备号数组 -->
 <p>示例：</p>
 <pre><code>{
-    &quot;results&quot;: {
-        &quot;delayTotal&quot;: [
+    &quot;results&quot;: [
             &quot;32050200041320000658&quot;,
             &quot;32050000001326000020&quot;,
             &quot;32050000001326000021&quot;,
             &quot;32050000001326000022&quot;
         ]
-    }
 }
 </code></pre><h3 id="23-获取设备倒挂率">
   2.3 获取设备倒挂率
@@ -427,26 +411,18 @@ GET接口，无参数</p>
 <td style="text-align:left">results</td>
 <td style="text-align:left">object</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left"> </td>
-</tr>
-<tr>
-<td style="text-align:left"> invertTotal</td>
-<td style="text-align:left">[]string</td>
-<td style="text-align:left">R</td>
-<td style="text-align:left">倒挂的设备号数组</td>
+<td style="text-align:left">所有倒挂的设备编号数组</td>
 </tr>
 </tbody>
 </table>
 <p>示例：</p>
 <pre><code>{
-    &quot;results&quot;: {
-        &quot;invertTotal&quot;: [
+    &quot;results&quot;: [
             &quot;32050200041320000658&quot;,
             &quot;32050000001326000020&quot;,
             &quot;32050000001326000021&quot;,
             &quot;32050000001326000022&quot;
         ]
-    }
 }
 </code></pre><h3 id="24-获取报文合格率">
   2.4 获取报文合格率
@@ -486,33 +462,44 @@ GET接口，无参数</p>
 <td style="text-align:left"> </td>
 </tr>
 <tr>
-<td style="text-align:left"> qualifiedTotal</td>
-<td style="text-align:left">map</td>
+<td style="text-align:left"> qualified_total</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">抽检合格的设备map key为设备编号 value为报文数量</td>
+<td style="text-align:left">设备编号对应的抽检合格报文数量</td>
 </tr>
 <tr>
-<td style="text-align:left"> checkTotal</td>
-<td style="text-align:left">map</td>
+<td style="text-align:left"> check_total</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">产生有效的报文的设备map  key为设备编号 value为报文数量</td>
+<td style="text-align:left">设备编号对应的报文接受数量</td>
+</tr>
+<tr>
+<td style="text-align:left"> device_id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">设备编号</td>
 </tr>
 </tbody>
 </table>
 <p>示例：</p>
 <pre><code>{
-    &quot;results&quot;: {
-        &quot;qualifiedTotal&quot;: {
-            &quot;32050651001320100630&quot;: 1,
-            &quot;32058200001310000401&quot;: 1,
-            &quot;32059423001310002240&quot;: 1
+    &quot;results&quot;: [
+        {
+            &quot;qualified_total&quot;: 1,
+            &quot;check_total&quot;: 1,
+            &quot;device_id&quot;: &quot;32050651001320100630&quot;
         },
-        &quot;checkTotal&quot;: {
-            &quot;32050651001320100630&quot;: 1,
-            &quot;32058200001310000401&quot;: 2,
-            &quot;32059423001310002240&quot;: 2
+        {
+            &quot;qualified_total&quot;: 1,
+            &quot;check_total&quot;: 2,
+            &quot;device_id&quot;: &quot;32058200001310000401&quot;
+        },
+        {
+            &quot;qualified_total&quot;: 1,
+            &quot;check_total&quot;: 2,
+            &quot;device_id&quot;: &quot;32059423001310002240&quot;
         }
-    }
+    ]
 }
    
 
@@ -554,30 +541,41 @@ GET接口，无参数</p>
 <td style="text-align:left"> </td>
 </tr>
 <tr>
-<td style="text-align:left"> abnormalTotal</td>
-<td style="text-align:left">map</td>
+<td style="text-align:left"> abnormal_total</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">接收的场景图URL访问异常图片的设备map key为设备编号 value为图片数量</td>
+<td style="text-align:left">设备编号对应的接收的场景图URL访问异常图片的数量</td>
 </tr>
 <tr>
-<td style="text-align:left"> receiveTotal</td>
-<td style="text-align:left">map</td>
+<td style="text-align:left"> receive_total</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">接收的场景图图片的设备map key为设备编号 value为图片数量</td>
+<td style="text-align:left">设备编号对应的接收的场景图图片数量</td>
+</tr>
+<tr>
+<td style="text-align:left"> device_id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">设备编号</td>
 </tr>
 </tbody>
 </table>
 <p>示例：</p>
-<pre><code>{
-    &quot;results&quot;: {
-        &quot;abnormalTotal&quot;: {
-            &quot;32058200001310000426&quot;: 1
+<pre><code>
+
+{
+    &quot;results&quot;: [
+        {
+            &quot;abnormal_total&quot;: 0,
+            &quot;receive_total&quot;: 1,
+            &quot;device_id&quot;: &quot;32058200001310000426&quot;
         },
-        &quot;receiveTotal&quot;: {
-            &quot;32058200001310000426&quot;: 2,
-            &quot;32059423001310002241&quot;: 1
+        {
+            &quot;abnormal_total&quot;: 0,
+            &quot;receive_total&quot;: 1,
+            &quot;device_id&quot;: &quot;32059423001310002241&quot;
         }
-    }
+    ]
 }
 </code></pre><h3 id="26-场景图不可用率">
   2.6 场景图不可用率
@@ -617,41 +615,53 @@ GET接口，无参数</p>
 <td style="text-align:left"> </td>
 </tr>
 <tr>
-<td style="text-align:left"> abnormalTotal</td>
-<td style="text-align:left">map</td>
+<td style="text-align:left"> abnormal_total</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">接收的场景图不可用的图片的设备map key为设备编号 value为图片数量</td>
+<td style="text-align:left">设备编号对应的接收的场景图不可用的图片数量</td>
 </tr>
 <tr>
-<td style="text-align:left"> receiveTotal</td>
-<td style="text-align:left">map</td>
+<td style="text-align:left"> receive_total</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
-<td style="text-align:left">接收的场景图的设备map key为设备编号 value为图片数量</td>
+<td style="text-align:left">设备编号对应的接收的场景图图片数量</td>
+</tr>
+<tr>
+<td style="text-align:left"> device_id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">设备编号</td>
 </tr>
 </tbody>
 </table>
 <p>示例：</p>
-<pre><code>{
-    &quot;results&quot;: {
-        &quot;abnormalTotal&quot;: {
-            &quot;32058254001310206429&quot;: 1
+<pre><code>
+
+{
+    &quot;results&quot;: [
+        {
+            &quot;abnormal_total&quot;: 0,
+            &quot;receive_total&quot;: 2,
+            &quot;device_id&quot;: &quot;32058254001310206377&quot;
         },
-        &quot;receiveTotal&quot;: {
-            &quot;30250667001320101001&quot;: 8,
-            &quot;32058200001310000426&quot;: 3,
-            &quot;32058253001324076656&quot;: 4,
-            &quot;32058254001310206377&quot;: 2,
-            &quot;32058254001310206429&quot;: 4,
-            &quot;32058263051320900005&quot;: 2,
-            &quot;32058263051320900031&quot;: 2,
-            &quot;32058368001310149987&quot;: 4,
-            &quot;32059409001310013420&quot;: 1,
-            &quot;32059423001310002240&quot;: 12,
-            &quot;32059423001310002241&quot;: 2,
-            &quot;32059453011320022001&quot;: 6
+        {
+            &quot;abnormal_total&quot;: 0,
+            &quot;receive_total&quot;: 3,
+            &quot;device_id&quot;: &quot;32058200001310000426&quot;
+        },
+        {
+            &quot;abnormal_total&quot;: 0,
+            &quot;receive_total&quot;: 2,
+            &quot;device_id&quot;: &quot;32058263051320900031&quot;
+        },
+        {
+            &quot;abnormal_total&quot;: 0,
+            &quot;receive_total&quot;: 12,
+            &quot;device_id&quot;: &quot;32059423001310002240&quot;
         }
-    }
+    ]
 }
+
 </code></pre><h3 id="27-人脸图不合格率">
   2.7 人脸图不合格率
   <a class="anchor" href="#27-%e4%ba%ba%e8%84%b8%e5%9b%be%e4%b8%8d%e5%90%88%e6%a0%bc%e7%8e%87">#</a>
@@ -722,19 +732,19 @@ GET接口，无参数</p>
 <td style="text-align:left"> </td>
 </tr>
 <tr>
-<td style="text-align:left"> validTotal</td>
+<td style="text-align:left"> valid_total</td>
 <td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
 <td style="text-align:left">接收的有效人脸图片数</td>
 </tr>
 <tr>
-<td style="text-align:left"> receiveTotal</td>
+<td style="text-align:left"> receive_total</td>
 <td style="text-align:left">int</td>
 <td style="text-align:left">R</td>
 <td style="text-align:left">接收的人脸图片总数</td>
 </tr>
 <tr>
-<td style="text-align:left"> deviceId</td>
+<td style="text-align:left"> device_id</td>
 <td style="text-align:left">string</td>
 <td style="text-align:left">R</td>
 <td style="text-align:left">设备编号</td>
@@ -751,13 +761,13 @@ GET接口，无参数</p>
     &quot;results&quot;: [
         {
             &quot;validTotal&quot;: 9756,
-            &quot;receiveTotal&quot;: 12179,
-            &quot;deviceId&quot;: &quot;32058366001310319301&quot;
+            &quot;receive_total&quot;: 12179,
+            &quot;device_id&quot;: &quot;32058366001310319301&quot;
         },
         {
             &quot;validTotal&quot;: 16751,
-            &quot;receiveTotal&quot;: 18545,
-            &quot;deviceId&quot;: &quot;32059423001310002248&quot;
+            &quot;receive_total&quot;: 18545,
+            &quot;device_id&quot;: &quot;32059423001310002248&quot;
         }
     ]
 }
@@ -861,7 +871,7 @@ results						|object		|R			|&nbsp;
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/5988c1f51acd1442ec5f372959def3d2ee8067d7" title='Last modified by gleemanx | January 5, 2022' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/94f0d67f59ac10c8cd6d1704b5b405d07a1a968f" title='Last modified by gleemanx | January 5, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>January 5, 2022</span>
     </a>
