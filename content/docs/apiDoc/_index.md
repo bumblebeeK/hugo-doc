@@ -346,11 +346,9 @@ results						|object		|R			|&nbsp;
 参数名称						|类型		|出现要求	|描述  
 :----						   |:---		|:------	|:---
 device_id                       |int		|O			|设备编号
-page_num			         	|int		|O			|分页页码
-page_size			         	|int		|O		    |分页大小
 请求示例：
-/external/face_disqualification?device_id=32058252001310208207
-/external/face_disqualification?page_num=0&page_size=2
+查询单个设备： /external/face_disqualification?device_id=32058252001310208207
+不传默认显示全部 /external/face_disqualification
 #### 2.7.2 返回结果
 
 参数名称						|类型		|出现要求	|描述  
