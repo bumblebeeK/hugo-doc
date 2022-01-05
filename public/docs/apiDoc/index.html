@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.ee31d7bf95d9aad46b92c3070fe8971b1b1e91b5eccd94081b842b487a202edd.js" integrity="sha256-7jHXv5XZqtRrksMHD&#43;iXGxsekbXszZQIG4QrSHogLt0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fa5558e611a3bd8a3bb8c062a9537ac4f78782785929d9477ef2a1242c8aa027.js" integrity="sha256-&#43;lVY5hGjvYo7uMBiqVN6xPeHgnhZKdlHfvKhJCyKoCc=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://doc.gleemanx.com/docs/apiDoc/index.xml" title="Gleemanx's doc" />
@@ -372,7 +372,7 @@ GET接口，无参数</p>
   <a class="anchor" href="#22-%e8%8e%b7%e5%8f%96%e8%ae%be%e5%a4%87%e5%bb%b6%e8%bf%9f%e7%8e%87">#</a>
 </h3>
 <ul>
-<li><strong>接口说明：</strong> 设备延迟率 tips:延迟：请求时间-抓拍时间&gt;30s</li>
+<li><strong>接口说明：</strong> 请求时间-抓拍时间&gt;30s</li>
 <li><strong>接口地址：</strong> /external/device_delay_rate</li>
 <li><strong>接口方法：</strong> GET</li>
 </ul>
@@ -600,15 +600,16 @@ GET接口，无参数</p>
 <pre><code>{
     &quot;results&quot;: {
         &quot;qualifiedTotal&quot;: [
-            &quot;0&quot;,
-            &quot;2&quot;,
-            &quot;1475740266936668179&quot;
+            &quot;32059423001310002240&quot;,
+            &quot;32058200001310000401&quot;,
+            &quot;32050651001320100630&quot;
         ],
         &quot;checkTotal&quot;: [
-            &quot;0&quot;,
-            &quot;1475740266936668179&quot;,
-            &quot;1&quot;,
-            &quot;2&quot;
+            &quot;32050651001320100630&quot;,
+            &quot;32058200001310000401&quot;,
+            &quot;32058200001310000401&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002240&quot;
         ]
     }
 }
@@ -669,13 +670,12 @@ GET接口，无参数</p>
 <pre><code>{
     &quot;results&quot;: {
         &quot;abnormalTotal&quot;: [
-            &quot;10011111111111118&quot;,
-            &quot;10011111111111118&quot;,
-
+            &quot;32058200001310000426&quot;,
+            &quot;32059423001310002241&quot;
         ],
         &quot;receiveTotal&quot;: [
-            &quot;10011111111111111&quot;,
-            &quot;10011111111111112&quot;
+            &quot;32058200001310000426&quot;,
+            &quot;32059423001310002241&quot;
         ]
     }
 }
@@ -734,18 +734,59 @@ GET接口，无参数</p>
 <pre><code>{
     &quot;results&quot;: {
         &quot;abnormalTotal&quot;: [
-            &quot;36&quot;
+            &quot;32058254001310206429&quot;
         ],
         &quot;receiveTotal&quot;: [
-            &quot;19&quot;,
-            &quot;15&quot;,
-            &quot;16&quot;,
-            &quot;3333&quot;,
-            &quot;2&quot;,
-            &quot;3&quot;,
-            &quot;4&quot;,
-            &quot;5&quot;,
-            &quot;6&quot;
+            &quot;32059423001310002240&quot;,
+            &quot;32059453011320022001&quot;,
+            &quot;32059453011320022001&quot;,
+            &quot;32058253001324076656&quot;,
+            &quot;32058253001324076656&quot;,
+            &quot;32058253001324076656&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059453011320022001&quot;,
+            &quot;32059453011320022001&quot;,
+            &quot;32059453011320022001&quot;,
+            &quot;32059453011320022001&quot;,
+            &quot;32058253001324076656&quot;,
+            &quot;30250667001320101001&quot;,
+            &quot;30250667001320101001&quot;,
+            &quot;30250667001320101001&quot;,
+            &quot;30250667001320101001&quot;,
+            &quot;30250667001320101001&quot;,
+            &quot;30250667001320101001&quot;,
+            &quot;30250667001320101001&quot;,
+            &quot;30250667001320101001&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32058254001310206377&quot;,
+            &quot;32058254001310206377&quot;,
+            &quot;32059409001310013420&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32058200001310000426&quot;,
+            &quot;32058200001310000426&quot;,
+            &quot;32058200001310000426&quot;,
+            &quot;32058263051320900031&quot;,
+            &quot;32058263051320900031&quot;,
+            &quot;32058263051320900005&quot;,
+            &quot;32058263051320900005&quot;,
+            &quot;32058254001310206429&quot;,
+            &quot;32058254001310206429&quot;,
+            &quot;32058254001310206429&quot;,
+            &quot;32058254001310206429&quot;,
+            &quot;32058368001310149987&quot;,
+            &quot;32058368001310149987&quot;,
+            &quot;32058368001310149987&quot;,
+            &quot;32058368001310149987&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002241&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002240&quot;,
+            &quot;32059423001310002241&quot;
         ]
     }
 }
@@ -754,7 +795,7 @@ GET接口，无参数</p>
   <a class="anchor" href="#27-%e4%ba%ba%e8%84%b8%e5%9b%be%e4%b8%8d%e5%90%88%e6%a0%bc%e7%8e%87">#</a>
 </h3>
 <ul>
-<li><strong>接口说明：</strong> 人脸图不合格率 tips:根据设备号获取有效人脸图片数和人脸图片总数</li>
+<li><strong>接口说明：</strong> 根据设备号获取有效人脸图片数和人脸图片总数</li>
 <li><strong>接口地址：</strong> /external/face_disqualification?device_id=?</li>
 <li><strong>接口方法：</strong> GET</li>
 </ul>
@@ -907,9 +948,9 @@ results						|object		|R			|&nbsp;
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/9dbe7fe5c3ccdf5d5cee9426f1d6fd2990c83b83" title='Last modified by gleemanx | January 4, 2022' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/gleemanx/hugo-doc/commit/c6373151647ecef86fba624591367d218d0c95f2" title='Last modified by gleemanx | January 5, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>January 4, 2022</span>
+      <span>January 5, 2022</span>
     </a>
   </div>
 
