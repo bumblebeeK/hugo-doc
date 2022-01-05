@@ -345,8 +345,8 @@ GET接口，无参数
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
 results						|object		|R			|&nbsp;
-&emsp;abnormalTotal				|[]string		|R			|接收的场景图URL访问异常图片编号数组
-&emsp;receiveTotal				|[]string		|R			|接收的场景图图片编号数组
+&emsp;abnormalTotal				|[]string		|R			|接收的场景图URL访问异常图片的设备编号数组
+&emsp;receiveTotal				|[]string		|R			|接收的场景图图片的设备编号数组
 
 
 
@@ -390,8 +390,8 @@ GET接口，无参数
 参数名称						|类型		|出现要求	|描述  
 :----						|:---		|:------	|:---	
 results						|object		|R			|&nbsp;
-&emsp;abnormalTotal				|[]string		|R			|接收的场景图不可用的图片编号数组
-&emsp;receiveTotal				|[]string		|R			|接收的场景图图片编号数组
+&emsp;abnormalTotal				|[]string		|R			|接收的场景图不可用的图片的设备编号数组
+&emsp;receiveTotal				|[]string		|R			|接收的场景图的设备编号数组
 
 
 
